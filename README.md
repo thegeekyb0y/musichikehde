@@ -6,6 +6,9 @@ A modern, responsive landing page for Onesheet - an all-in-one artist profile pl
 
 Onesheet is designed to help musicians create dynamic, professional profiles that automatically update with their latest releases, stats, and promotional content. The platform provides a comprehensive solution for artists to present their music to the industry and fans.
 
+**Original Website**
+onesheet.club
+
 ## 🚀 Tech Stack
 
 - **React 19.1.0** - Modern React with latest features
