@@ -1,5 +1,7 @@
 # Onesheet - Music Artist Profile Platform (Landing Page Redesign)
 
+**Will add live link soon...**
+
 A modern, responsive landing page for Onesheet - an all-in-one artist profile platform that helps musicians showcase their music, stats, and promotional content.
 
 ## 🎵 About
