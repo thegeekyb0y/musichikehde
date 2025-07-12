@@ -6,8 +6,9 @@ A modern, responsive landing page for Onesheet - an all-in-one artist profile pl
 
 Onesheet is designed to help musicians create dynamic, professional profiles that automatically update with their latest releases, stats, and promotional content. The platform provides a comprehensive solution for artists to present their music to the industry and fans.
 
-**Original Website**
-onesheet.club
+**✨Original Website**:
+
+https://www.onesheet.club/
 
 ## 🚀 Tech Stack
 
@@ -22,8 +23,8 @@ onesheet.club
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
-cd clone1
+git clone https://github.com/thegeekyb0y/musichikehde
+cd musichikehde
 ```
 
 2. Install dependencies:
@@ -75,27 +76,6 @@ musichikehde/
 - **Sticky Cards**: Parallax-style stacking cards for feature showcase
 - **Gradient Effects**: Beautiful gradient backgrounds and transitions
 - **Responsive Layout**: Optimized for mobile, tablet, and desktop
-
-## 🎯 Key Components
-
-### Hero Section
-
-- Trust badge with verification icon
-- Compelling headline about viral music creation
-- Call-to-action button with hover effects
-- Floating widgets with arrows pointing to main content
-
-### Feature Cards
-
-- Sticky stacking cards with parallax effect
-- Numbered features (01-04)
-- Gradient backgrounds with white text
-- Feature images and descriptions
-
-### Header
-
-- Navigation component (customizable)
-- Responsive design
 
 ## 🔧 Customization
 
