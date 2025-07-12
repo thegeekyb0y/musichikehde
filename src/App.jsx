@@ -1,5 +1,5 @@
 import "./App.css";
-import { Header } from "./components/header";
+import { Header } from "./components/Header";
 import HeroSec from "./components/HeroSec";
 import StackingCards from "./components/StackedCards";
 
