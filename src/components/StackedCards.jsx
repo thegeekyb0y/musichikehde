@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { cards } from "../data/cards";
 import Card from "./Card";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 const StackingCards = () => {
   const cardsRef = useRef([]);
   const [cardHeight, setCardHeight] = useState(0);
+  useScrollReveal();
 
   useEffect(() => {
     if (cardsRef.current[0]) {
@@ -15,7 +17,7 @@ const StackingCards = () => {
   return (
     <>
       {/* Hero */}
-      <section className="flex justify-center text-white">
+      <section className="flex justify-center text-white scroll-reveal opacity-0 translate-y-8 transition-all duration-1500">
         <header className="text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-2 md:mb-6">
             What can you do with your Onesheet?
@@ -28,7 +30,7 @@ const StackingCards = () => {
       </section>
 
       {/* Stacking section */}
-      <section className="relative">
+      <section className="relative  ">
         {cards.map((card, i) => (
           <div
             key={card.id}
@@ -39,21 +41,6 @@ const StackingCards = () => {
             <Card {...card} />
           </div>
         ))}
-      </section>
-
-      {/* CTA */}
-      <section className="h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-black text-white">
-        <div className="text-center">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Ready to Start?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Let's create something amazing together
-          </p>
-          <button className="bg-white text-gray-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300">
-            Get Started
-          </button>
-        </div>
       </section>
     </>
   );

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { AudioLines, Menu, X } from "lucide-react";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  useScrollReveal();
 
   return (
-    <div className=" bg-stone-600/65 border-2 border-color3 h-16 p-2 mt-4 lg:mx-26 flex gap-2 mx-4 fixed top-0 left-0 right-0 z-50 backdrop-blur-md rounded-xl text-amber-50">
+    <div className=" bg-stone-600/65 border-2 scroll-reveal opacity-0 transition-all duration-1500 border-color3 h-16 p-2 mt-4 lg:mx-26 flex gap-2 mx-4 fixed top-0 left-0 right-0 z-50 backdrop-blur-md rounded-xl text-amber-50">
       <div className="ml-4 cursor-pointer self-center shrink-0">
         <AudioLines />
       </div>

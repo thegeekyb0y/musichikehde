@@ -1,6 +1,7 @@
 import "./App.css";
 import { Header } from "./components/Header";
 import HeroSec from "./components/HeroSec";
+import { HowtoSec } from "./components/HowtoSec";
 import StackingCards from "./components/StackedCards";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Header />
       <HeroSec />
       <StackingCards />
+      <HowtoSec />
     </div>
   );
 }
