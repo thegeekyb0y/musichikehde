@@ -6,11 +6,11 @@ const HeroSec = () => {
   useScrollReveal();
   return (
     <div className="relative scroll-reveal opacity-0 -translate-y-8 transition-all duration-1500">
-      <div className="flex mt-12 md:mt-16 gap-2 justify-center px-4 py-2 xs:mx-auto mx-2 bg-gradient-to-r from-gray-500 via-green-500 to-emerald-400 rounded-xl w-fit border-2 border-green-500 ">
+      <div className="flex mt-12 md:mt-16 gap-2 justify-center px-4 py-2 mx-auto bg-gradient-to-r from-gray-500 via-green-500 to-emerald-400 rounded-xl w-fit border-2 border-green-500 ">
         <div className="self-center">
           <Verified size={16} color="white" />
         </div>
-        <div className="self-center text-center text-white">
+        <div className="self-center text-xs md:text-lg text-center text-white">
           Trusted by over 50k+ Musicians worldwide.
         </div>
       </div>
