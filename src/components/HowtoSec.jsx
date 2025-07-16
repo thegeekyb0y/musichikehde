@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   FileText,
   Palette,
@@ -11,6 +11,38 @@ import {
 } from "lucide-react";
 
 export const HowtoSec = () => {
+  const [visibleImages, setVisibleImages] = useState(new Set());
+  const imageRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = imageRefs.current.indexOf(entry.target);
+            if (index !== -1) {
+              setVisibleImages((prev) => new Set(prev).add(index));
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    imageRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const setImageRef = (index) => (el) => {
+    imageRefs.current[index] = el;
+  };
+
   return (
     <div className="rounded-2xl md:mx-20 mx-2 p-8 md:mt-10 mt-80 bg-gradient-to-r from-slate-900 to-emerald-500">
       <section className="min-h-screen flex justify-center text-white">
@@ -34,8 +66,8 @@ export const HowtoSec = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
             {/* Card 1 - Sign Up */}
             <div
-              className="md:col-span-1 md:row-span-1 
-            bg-slate-800 border border-emerald-300/80 rounded-xl p-6 hover:scale-105 
+              className="md:col-span-1 md:row-span-1
+            bg-slate-800 border border-emerald-300/80 rounded-xl p-6 hover:scale-105
             transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20"
             >
               <div className="flex flex-col h-full ">
@@ -51,7 +83,16 @@ export const HowtoSec = () => {
                 <p className="text-slate-300 text-left text-sm leading-relaxed mb-4">
                   Create your account to get started with our platform.
                 </p>
-                <img src="/images/step0.png" className="rounded-xl"></img>
+                <img
+                  ref={setImageRef(0)}
+                  src="/images/step0.png"
+                  className={`rounded-xl transition-all duration-700 ease-out ${
+                    visibleImages.has(0)
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-8"
+                  }`}
+                  alt="Sign Up Step"
+                />
               </div>
             </div>
 
@@ -71,7 +112,16 @@ export const HowtoSec = () => {
                   Select from our collection of professionally designed
                   templates.
                 </p>
-                <img src="/images/step1.jpg" className="rounded-xl"></img>
+                <img
+                  ref={setImageRef(1)}
+                  src="/images/step1.jpg"
+                  className={`rounded-xl transition-all duration-700 ease-out delay-100 ${
+                    visibleImages.has(1)
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-8"
+                  }`}
+                  alt="Choose Template Step"
+                />
               </div>
             </div>
 
@@ -90,11 +140,20 @@ export const HowtoSec = () => {
                 <p className="text-slate-300 text-left text-sm mb-3 leading-relaxed">
                   Check your onesheet before finalizing and sharing it.
                 </p>
-                <img src="/images/step2.jpg" className="rounded-xl"></img>
+                <img
+                  ref={setImageRef(2)}
+                  src="/images/step2.jpg"
+                  className={`rounded-xl transition-all duration-700 ease-out delay-200 ${
+                    visibleImages.has(2)
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-8"
+                  }`}
+                  alt="Preview Step"
+                />
               </div>
             </div>
 
-            {/* Card 6 - Share (Small) */}
+            {/* Card 4 - Share (Small) */}
             <div className="md:col-span-1 md:row-span-1 bg-slate-800 border border-emerald-300/80 rounded-xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20">
               <div className="flex flex-col h-full ">
                 <div className="flex items-center justify-between mb-4">
@@ -106,13 +165,18 @@ export const HowtoSec = () => {
                 <h3 className="text-lg text-left font-bold mb-1 text-emerald-100">
                   Share & Export
                 </h3>
-                <p className="text-slate-300 text-left text-xs mb-3 leading-relaxed">
+                <p className="text-slate-300 text-left text-sm mb-3 leading-relaxed">
                   Download or share your professional onesheet.
                 </p>
                 <div className="flex-grow flex items-center">
                   <img
+                    ref={setImageRef(3)}
                     src="/images/step2.png"
-                    className="rounded-xl w-full bg-green-500/70"
+                    className={`rounded-xl w-full bg-green-500/70 transition-all duration-700 ease-out delay-300 ${
+                      visibleImages.has(3)
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-8"
+                    }`}
                     alt="Share and Export"
                   />
                 </div>
