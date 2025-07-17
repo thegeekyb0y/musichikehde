@@ -8,3 +8,9 @@
   --color-color5: #94d3d5;
   --breakpoint-xs: 23rem;
 }
+
+@layer components {
+  .fade-in-up-delayed {
+    @apply opacity-0 translate-y-8 transition-all delay-150 duration-1500;
+  }
+}

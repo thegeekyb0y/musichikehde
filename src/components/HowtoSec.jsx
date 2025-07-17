@@ -1,48 +1,36 @@
 import React, { useState, useEffect, useRef } from "react";
-import {
-  FileText,
-  Palette,
-  Layout,
-  Target,
-  Users,
-  Sparkles,
-  Share2,
-  Brush,
-} from "lucide-react";
+import { FileText, Layout, Target, Share2 } from "lucide-react";
 
-export const HowtoSec = () => {
-  const [visibleImages, setVisibleImages] = useState(new Set());
-  const imageRefs = useRef([]);
-
+function useScrollReveal(selector = ".img", options = {}) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const index = imageRefs.current.indexOf(entry.target);
-            if (index !== -1) {
-              setVisibleImages((prev) => new Set(prev).add(index));
-            }
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            // Change the class to remove from translate-y-8 to translate-y-full
+            entry.target.classList.remove("opacity-0", "translate-y-full");
+            observer.unobserve(entry.target);
           }
         });
       },
       {
         threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
+        ...options,
       }
     );
 
-    imageRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
+    const targets = document.querySelectorAll(selector);
+    targets.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      targets.forEach((el) => observer.unobserve(el));
+    };
+  }, [selector, options]);
+}
 
-  const setImageRef = (index) => (el) => {
-    imageRefs.current[index] = el;
-  };
-
+export const HowtoSec = () => {
+  useScrollReveal();
   return (
     <div className="rounded-2xl md:mx-20 mx-2 p-8 md:mt-10 mt-80 bg-gradient-to-r from-slate-900 to-emerald-500">
       <section className="min-h-screen flex justify-center text-white">
@@ -84,13 +72,8 @@ export const HowtoSec = () => {
                   Create your account to get started with our platform.
                 </p>
                 <img
-                  ref={setImageRef(0)}
                   src="/images/step0.png"
-                  className={`rounded-xl transition-all duration-700 ease-out ${
-                    visibleImages.has(0)
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-8"
-                  }`}
+                  className="rounded-xl transition-all duration-700 opacity-0 translate-y-full delay-75 ease-out img"
                   alt="Sign Up Step"
                 />
               </div>
@@ -112,16 +95,22 @@ export const HowtoSec = () => {
                   Select from our collection of professionally designed
                   templates.
                 </p>
-                <img
-                  ref={setImageRef(1)}
-                  src="/images/step1.jpg"
-                  className={`rounded-xl transition-all duration-700 ease-out delay-100 ${
-                    visibleImages.has(1)
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-8"
-                  }`}
-                  alt="Choose Template Step"
-                />
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="opacity-0 translate-y-full rounded-xl transition-all duration-700 ease-out delay-200 img"
+                >
+                  {/* The browser will try this first */}
+                  <source
+                    src="/videos/your-video-file.webm"
+                    type="video/webm"
+                  />
+
+                  {/* If it can't play .webm, it will use this .mp4 file */}
+                  <source src="/videos/vid2.webm" type="video/mp4" />
+                </video>
               </div>
             </div>
 
@@ -141,13 +130,8 @@ export const HowtoSec = () => {
                   Check your onesheet before finalizing and sharing it.
                 </p>
                 <img
-                  ref={setImageRef(2)}
                   src="/images/step2.jpg"
-                  className={`rounded-xl transition-all duration-700 ease-out delay-200 ${
-                    visibleImages.has(2)
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-8"
-                  }`}
+                  className="opacity-0 translate-y-full rounded-xl transition-all duration-700 ease-out delay-75 img"
                   alt="Preview Step"
                 />
               </div>
@@ -170,13 +154,8 @@ export const HowtoSec = () => {
                 </p>
                 <div className="flex-grow flex items-center">
                   <img
-                    ref={setImageRef(3)}
                     src="/images/step2.png"
-                    className={`rounded-xl w-full bg-green-500/70 transition-all duration-700 ease-out delay-300 ${
-                      visibleImages.has(3)
-                        ? "opacity-100 translate-y-0"
-                        : "opacity-0 translate-y-8"
-                    }`}
+                    className="rounded-xl w-full bg-green-500/70 transition-all duration-700 opacity-0 translate-y-full ease-out delay-75 img"
                     alt="Share and Export"
                   />
                 </div>

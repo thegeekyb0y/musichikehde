@@ -6,7 +6,7 @@ import useScrollReveal from "../hooks/useScrollReveal";
 const StackingCards = () => {
   const cardsRef = useRef([]);
   const [cardHeight, setCardHeight] = useState(0);
-  useScrollReveal();
+  useScrollReveal(".img");
 
   useEffect(() => {
     if (cardsRef.current[0]) {
@@ -17,7 +17,7 @@ const StackingCards = () => {
   return (
     <>
       {/* Hero */}
-      <section className="flex justify-center text-white scroll-reveal opacity-0 translate-y-8 transition-all duration-1500">
+      <section className="flex justify-center text-white scroll-reveal fade-in-up-delayed">
         <header className="text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-2 md:mb-6">
             What can you do with your Onesheet?
@@ -30,11 +30,11 @@ const StackingCards = () => {
       </section>
 
       {/* Stacking section */}
-      <section className="relative  ">
+      <section className="relative img  scroll-reveal fade-in-up-delayed">
         {cards.map((card, i) => (
           <div
             key={card.id}
-            className="sticky flex items-center justify-center"
+            className="sticky flex items-center justify-center scroll-reveal fade-in-up-delayed"
             style={{ top: `${i * 60}px`, zIndex: i + 1, height: "70vh" }}
             ref={(el) => (cardsRef.current[i] = el)}
           >
