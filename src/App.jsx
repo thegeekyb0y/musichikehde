@@ -3,6 +3,7 @@ import { Header } from "./components/Header";
 import HeroSec from "./components/HeroSec";
 import { HowtoSec } from "./components/HowtoSec";
 import StackingCards from "./components/StackedCards";
+import { Testimonials } from "./components/Testimonials";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <HeroSec />
       <StackingCards />
       <HowtoSec />
+      <Testimonials />
     </div>
   );
 }

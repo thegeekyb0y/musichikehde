@@ -41,7 +41,7 @@ export const Header = () => {
       </button>
 
       <div
-        className={`absolute top-16 left-0 right-0  bg-green-500/75 p-4 flex flex-col gap-4 rounded-2xl lg:hidden transition-all duration-300 ease-in-out transform ${
+        className={`absolute top-16 left-0 right-0 bg-zinc-800 p-4 flex flex-col gap-4 rounded-2xl lg:hidden transition-all duration-300 ease-in-out transform ${
           isMobileMenuOpen
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-4 pointer-events-none"

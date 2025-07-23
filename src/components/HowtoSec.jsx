@@ -55,7 +55,7 @@ export const HowtoSec = () => {
             {/* Card 1 - Sign Up */}
             <div
               className="md:col-span-1 md:row-span-1
-            bg-slate-800 border border-emerald-300/80 rounded-xl p-6 hover:scale-105
+            bg-slate-800 border border-emerald-300/80 rounded-xl p-6 hover:scale-102
             transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20"
             >
               <div className="flex flex-col h-full ">
@@ -80,7 +80,7 @@ export const HowtoSec = () => {
             </div>
 
             {/* Card 2 - Choose Template (Large) */}
-            <div className="md:col-span-2 md:row-span-1 bg-slate-800 border border-emerald-300/80 rounded-xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20">
+            <div className="md:col-span-2 md:row-span-1 bg-slate-800 border border-emerald-300/80 rounded-xl p-6 hover:scale-102 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20">
               <div className="flex flex-col h-full ">
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-emerald-400 text-xs font-semibold">
@@ -115,7 +115,7 @@ export const HowtoSec = () => {
             </div>
 
             {/* Card 3 - Preview (Large) */}
-            <div className="md:col-span-2 md:row-span-1 bg-slate-800 border border-emerald-300/80 rounded-xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20">
+            <div className="md:col-span-2 md:row-span-1 bg-slate-800 border border-emerald-300/80 rounded-xl p-6 hover:scale-102 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20">
               <div className="flex flex-col h-full ">
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-emerald-400 text-xs font-semibold">
@@ -129,16 +129,20 @@ export const HowtoSec = () => {
                 <p className="text-slate-300 text-left text-sm mb-3 leading-relaxed">
                   Check your onesheet before finalizing and sharing it.
                 </p>
-                <img
-                  src="/images/step2.jpg"
-                  className="opacity-0 translate-y-full rounded-xl transition-all duration-700 ease-out delay-75 img"
-                  alt="Preview Step"
-                />
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="opacity-0 translate-y-full rounded-xl transition-all duration-700 ease-out delay-200 img"
+                >
+                  <source src="/videos/vid1.webm" type="video/webm" />
+                </video>
               </div>
             </div>
 
             {/* Card 4 - Share (Small) */}
-            <div className="md:col-span-1 md:row-span-1 bg-slate-800 border border-emerald-300/80 rounded-xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20">
+            <div className="md:col-span-1 md:row-span-1 bg-slate-800 border border-emerald-300/80 rounded-xl p-6 hover:scale-102 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20">
               <div className="flex flex-col h-full ">
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-emerald-400 text-xs font-semibold">
