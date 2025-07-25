@@ -24,7 +24,7 @@ const Card = ({
         <p className="uppercase tracking-widest text-sm mb-2 opacity-60">
           {upperSubCaption}
         </p>
-        <h2 className="text-2xl sm:text-4xl md:text-3xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-4xl md:text-3xl font-semibold mb-4">
           {title}
         </h2>
         <p className="text-base sm:text-lg opacity-90 leading-relaxed mb-8">

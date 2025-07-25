@@ -5,7 +5,10 @@ import useScrollReveal from "../hooks/useScrollReveal";
 const HeroSec = () => {
   useScrollReveal();
   return (
-    <div className="relative scroll-reveal opacity-0 -translate-y-8 transition-all duration-1500">
+    <div
+      id="top"
+      className="relative scroll-reveal opacity-0 -translate-y-8 transition-all duration-1500"
+    >
       <div className="flex mt-12 md:mt-16 gap-2 justify-center px-4 py-2 mx-auto bg-gradient-to-r from-gray-500 via-green-500 to-emerald-400 rounded-xl w-fit border-2 border-green-500 ">
         <div className="self-center">
           <Verified size={16} color="white" />
@@ -16,18 +19,18 @@ const HeroSec = () => {
       </div>
 
       <div className="text-center text-green-400 p-8">
-        <h1 className="font-bold leading-tight">
+        <h1 className="font-semibold leading-tight">
           {/* Mobile: smaller text, single line is fine */}
-          <span className="block md:hidden text-4xl mt-2 sm:text-5xl">
+          <span className="block md:hidden text-3xl mt-2 sm:text-4xl">
             Make Music that goes Viral in just few clicks!!
           </span>
 
           {/* Desktop: larger text, forced 2-line layout */}
           <span className="hidden md:block space-y-2">
-            <span className="block text-6xl lg:text-7xl">
+            <span className="block text-5xl lg:text-6xl">
               Make Music that goes Viral
             </span>
-            <span className="block text-6xl lg:text-7xl">
+            <span className="block text-5xl lg:text-6xl">
               in just few Clicks!!!
             </span>
           </span>
