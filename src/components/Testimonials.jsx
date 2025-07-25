@@ -39,7 +39,7 @@ export const Testimonials = () => {
           </div>
 
           {/* Part -2 (tweets) */}
-          <div className="text-center px-6 sm:px-8 lg:px-12 mt-40 pb-8 sm:pb-12 lg:pb-16">
+          <div className="text-center px-6 sm:px-8 lg:px-12 mt-20 md:mt-40 pb-8 sm:pb-12 lg:pb-16">
             <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-green-400">
               Why they love us?
             </p>

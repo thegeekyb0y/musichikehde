@@ -1,4 +1,5 @@
 import "./App.css";
+import { Demo } from "./components/Demo";
 import { Header } from "./components/Header";
 import HeroSec from "./components/HeroSec";
 import { HowtoSec } from "./components/HowtoSec";
@@ -21,6 +22,7 @@ function App() {
       <StackingCards />
       <HowtoSec />
       <Testimonials />
+      <Demo />
     </div>
   );
 }
